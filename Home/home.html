@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialStream | Hackathon Project</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-content">
+            <div class="logo">Social<span class="highlight">Stream</span></div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button class="search-btn">🔍</button>
+            </div>
+    
+            <div class="nav-actions">
+                <div class="profile-widget">
+                    <span id="user-greeting" class="user-name">Hi, Azan</span>
+                    <span id="live-clock" class="time-display">--:-- --</span>
+                </div>
+                <button id="logoutBtn" class="logout-btn" title="Logout">🚪</button>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main-layout">
+        <!-- Left Sidebar (Desktop Only) -->
+        <aside class="left-sidebar">
+            <div class="sidebar-card">
+                <div class="user-profile-card">
+                    <div class="profile-avatar-large">
+                        <span id="profile-avatar-text">A</span>
+                    </div>
+                    <h3 id="profile-username">Username</h3>
+                    <p id="profile-email">user@email.com</p>
+                </div>
+                
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-posts">0</span>
+                        <span class="stat-label">Posts</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-likes">0</span>
+                        <span class="stat-label">Likes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h4 class="sidebar-title">Quick Actions</h4>
+                <button class="quick-action-btn" onclick="document.getElementById('postInput').focus()">
+                    ✍️ Create Post
+                </button>
+                <button class="quick-action-btn" onclick="document.getElementById('searchInput').focus()">
+                    🔍 Search Posts
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="container">
+
+        <section class="create-post-card">
+            <textarea id="postInput" placeholder="What's on your mind?"></textarea>
+            
+            <div class="create-actions">
+                <input type="text" id="imageInput" placeholder="Paste image URL (optional)..." class="url-input">
+                <button id="postBtn" class="primary-btn">Post</button>
+            </div>
+        </section>
+
+        <div class="filters">
+            <button class="filter-btn active" data-sort="latest">Latest</button>
+            <button class="filter-btn" data-sort="oldest">Oldest</button>
+        </div>
+
+        <div id="feed">
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user-info">
+                        <div class="avatar">A</div>
+                        <div class="details">
+                            <span class="username">Muhammad Azan</span>
+                            <span class="timestamp">Just now</span>
+                        </div>
+                    </div>
+                    <button class="delete-btn">🗑️</button> </div>
+                
+                <p class="post-text">This is a sample design for the Coding Night hackathon! The UI is built using pure CSS flexbox and variables. 🚀</p>
+                
+                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+
+                <div class="post-footer">
+                    <button class="like-btn">
+                        <span class="heart-icon">❤️</span> 
+                        <span class="like-count">12</span> </button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+    <script src="home.js"></script>
+</body>
+</html>
