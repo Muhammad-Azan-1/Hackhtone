@@ -1,40 +1,8 @@
 {
-  "version": 2,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/Authentication/index.html"
-    },
-    {
-      "src": "/Authentication/(.*)",
-      "dest": "/Authentication/$1"
-    },
-    {
-      "src": "/Home/(.*)",
-      "dest": "/Home/$1"
-    },
-    {
-      "src": "/(.*\\.(html|css|js|png|jpg|jpeg|gif|svg|ico|json))",
-      "dest": "/$1"
-    }
-  ],
   "rewrites": [
     {
       "source": "/",
       "destination": "/Authentication/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
     }
   ]
 }
