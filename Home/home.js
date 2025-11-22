@@ -6,6 +6,35 @@ if (!user) {
   window.location.href = "../Authentication/index.html";
 }
 
+//? Initialize theme from localStorage
+function initTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  updateThemeIcon(savedTheme);
+}
+
+//? Toggle theme function
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  
+  document.documentElement.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+  updateThemeIcon(newTheme);
+}
+
+//? Update theme icon
+function updateThemeIcon(theme) {
+  const themeToggle = document.getElementById("themeToggle");
+  if (themeToggle) {
+    themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+    themeToggle.title = theme === "dark" ? "Toggle Light Mode" : "Toggle Dark Mode";
+  }
+}
+
+//? Initialize theme on page load
+initTheme();
+
 //? Update the live clock in the header
 
 function updateClock() {
@@ -338,6 +367,11 @@ function logout() {
 }
 
 //? Event listeners
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+  themeToggle.addEventListener("click", toggleTheme);
+}
+
 const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {

@@ -7,7 +7,7 @@
     const loginForm = document.getElementById('login')
     const signupForm = document.getElementById('signup')
 
-//? Initialize users array in localStorage if it doesn't exist
+//? Initializing users array in localStorage if it doesn't exist
 if (!localStorage.getItem('users')) {
     localStorage.setItem('users', JSON.stringify([]));
 }
@@ -50,7 +50,7 @@ signupForm.addEventListener('submit', (e) => {
     }
 
     // Get existing users from localStorage
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const users = JSON.parse(localStorage.getItem('users'));
 
     // Check if username already exists
     const userExists = users.some(user => user.username === username || user.email === email);
