@@ -1,0 +1,14 @@
+{
+  "name": "hackhtone-social-media-app",
+  "version": "1.0.0",
+  "description": "Social Media App - Hackathon Project",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
